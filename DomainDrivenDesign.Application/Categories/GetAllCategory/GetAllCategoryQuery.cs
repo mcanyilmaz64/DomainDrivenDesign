@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DomainDrivenDesign.Domain.Categories;
+using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DomainDrivenDesign.Application.Categories.GetAllCategory
 {
-    internal class GetAllCategoryQuery
-    {
-    }
+    public sealed record GetAllCategoryQuery() : IRequest<List<Category>>;
+    
+   
 }
