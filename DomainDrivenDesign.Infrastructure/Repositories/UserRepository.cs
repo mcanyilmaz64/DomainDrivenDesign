@@ -1,5 +1,5 @@
 ﻿using DomainDrivenDesign.Domain.Users;
-using DomainDrivenDesign.Infastructure.Context;
+using DomainDrivenDesign.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DomainDrivenDesign.Infastructure.Repositories
+namespace DomainDrivenDesign.Infrastructure.Repositories
 {
     internal sealed class UserRepository : IUserRepository
     {
