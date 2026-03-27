@@ -11,6 +11,10 @@ namespace DomainDrivenDesign.Domain.Users
 {
     public sealed class User : Entity
     {
+        private User(Guid id) : base(id)
+        {
+            
+        }
         private User(Guid id,Name name, Email email, Password password, Adress adress): base(id)
         {
             Name = name;
