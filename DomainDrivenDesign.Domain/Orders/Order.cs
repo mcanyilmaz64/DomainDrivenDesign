@@ -12,18 +12,17 @@ namespace DomainDrivenDesign.Domain.Orders
     public sealed class Order : Entity
 
         {
-            public Order(Guid id,string orderNumber, DateTime createDate, string orderStatusEnum, ICollection<OrderLine> orderLines) : base(id)
+            public Order(Guid id,string orderNumber, DateTime createDate, OrderStatusEnum status) : base(id)
             {
                 OrderNumber = orderNumber;
                 CreateDate = createDate;
-                OrderStatusEnum = orderStatusEnum;
-                OrderLines = orderLines;
+                Status = status;
             }
 
             public string OrderNumber { get;private set; }
             public DateTime CreateDate { get; private set; }
-            public string OrderStatusEnum { get; private set; }
-            public ICollection<OrderLine> OrderLines { get; private set; }
+            public OrderStatusEnum Status { get; private set; }
+            public ICollection<OrderLine> OrderLines { get; private set; } = new List<OrderLine>();
 
             public void CreateOrder(List<CreateOrderDto> createOrderDtos)
             {
