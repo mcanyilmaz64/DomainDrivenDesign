@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MediatR;
 using System.Reflection;
+using DomainDrivenDesign.Domain.Abstraction;
 
 namespace DomainDrivenDesign.Application
 {
@@ -16,7 +17,9 @@ namespace DomainDrivenDesign.Application
         {
             services.AddMediatR(cfg =>
             {
-                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                cfg.RegisterServicesFromAssemblies(
+                    Assembly.GetExecutingAssembly(),
+                    typeof(Entity).Assembly);
             });
             return services;
         }
